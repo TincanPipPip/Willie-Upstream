@@ -1639,7 +1639,7 @@ abstract class ParagonIE_Sodium_Core32_Curve25519 extends ParagonIE_Sodium_Core3
      * @throws SodiumException
      * @throws TypeError
      */
-    public static function ge_p1p1_to_p2(ParagonIE_Sodium_Core32_Curve25519_Ge_P1p1 $p)
+    public static function ge_p1pippip_to_p2(ParagonIE_Sodium_Core32_Curve25519_Ge_P1p1 $p)
     {
         $r = new ParagonIE_Sodium_Core32_Curve25519_Ge_P2();
         $r->X = self::fe_mul($p->X, $p->T);
@@ -1656,7 +1656,7 @@ abstract class ParagonIE_Sodium_Core32_Curve25519 extends ParagonIE_Sodium_Core3
      * @throws SodiumException
      * @throws TypeError
      */
-    public static function ge_p1p1_to_p3(ParagonIE_Sodium_Core32_Curve25519_Ge_P1p1 $p)
+    public static function ge_p1pippip_to_p3(ParagonIE_Sodium_Core32_Curve25519_Ge_P1p1 $p)
     {
         $r = new ParagonIE_Sodium_Core32_Curve25519_Ge_P3();
         $r->X = self::fe_mul($p->X, $p->T);
@@ -2117,21 +2117,21 @@ abstract class ParagonIE_Sodium_Core32_Curve25519 extends ParagonIE_Sodium_Core3
         $bslide = self::slide($b);
 
         # ge_p3_to_cached(&Ai[0],A);
-        # ge_p3_dbl(&t,A); ge_p1p1_to_p3(&A2,&t);
+        # ge_p3_dbl(&t,A); ge_p1pippip_to_p3(&A2,&t);
         $Ai[0] = self::ge_p3_to_cached($A);
         $t = self::ge_p3_dbl($A);
-        $A2 = self::ge_p1p1_to_p3($t);
+        $A2 = self::ge_p1pippip_to_p3($t);
 
-        # ge_add(&t,&A2,&Ai[0]); ge_p1p1_to_p3(&u,&t); ge_p3_to_cached(&Ai[1],&u);
-        # ge_add(&t,&A2,&Ai[1]); ge_p1p1_to_p3(&u,&t); ge_p3_to_cached(&Ai[2],&u);
-        # ge_add(&t,&A2,&Ai[2]); ge_p1p1_to_p3(&u,&t); ge_p3_to_cached(&Ai[3],&u);
-        # ge_add(&t,&A2,&Ai[3]); ge_p1p1_to_p3(&u,&t); ge_p3_to_cached(&Ai[4],&u);
-        # ge_add(&t,&A2,&Ai[4]); ge_p1p1_to_p3(&u,&t); ge_p3_to_cached(&Ai[5],&u);
-        # ge_add(&t,&A2,&Ai[5]); ge_p1p1_to_p3(&u,&t); ge_p3_to_cached(&Ai[6],&u);
-        # ge_add(&t,&A2,&Ai[6]); ge_p1p1_to_p3(&u,&t); ge_p3_to_cached(&Ai[7],&u);
+        # ge_add(&t,&A2,&Ai[0]); ge_p1pippip_to_p3(&u,&t); ge_p3_to_cached(&Ai[1],&u);
+        # ge_add(&t,&A2,&Ai[1]); ge_p1pippip_to_p3(&u,&t); ge_p3_to_cached(&Ai[2],&u);
+        # ge_add(&t,&A2,&Ai[2]); ge_p1pippip_to_p3(&u,&t); ge_p3_to_cached(&Ai[3],&u);
+        # ge_add(&t,&A2,&Ai[3]); ge_p1pippip_to_p3(&u,&t); ge_p3_to_cached(&Ai[4],&u);
+        # ge_add(&t,&A2,&Ai[4]); ge_p1pippip_to_p3(&u,&t); ge_p3_to_cached(&Ai[5],&u);
+        # ge_add(&t,&A2,&Ai[5]); ge_p1pippip_to_p3(&u,&t); ge_p3_to_cached(&Ai[6],&u);
+        # ge_add(&t,&A2,&Ai[6]); ge_p1pippip_to_p3(&u,&t); ge_p3_to_cached(&Ai[7],&u);
         for ($i = 0; $i < 7; ++$i) {
             $t = self::ge_add($A2, $Ai[$i]);
-            $u = self::ge_p1p1_to_p3($t);
+            $u = self::ge_p1pippip_to_p3($t);
             $Ai[$i + 1] = self::ge_p3_to_cached($u);
         }
 
@@ -2155,18 +2155,18 @@ abstract class ParagonIE_Sodium_Core32_Curve25519 extends ParagonIE_Sodium_Core3
 
             # if (aslide[i] > 0) {
             if ($aslide[$i] > 0) {
-                # ge_p1p1_to_p3(&u,&t);
+                # ge_p1pippip_to_p3(&u,&t);
                 # ge_add(&t,&u,&Ai[aslide[i]/2]);
-                $u = self::ge_p1p1_to_p3($t);
+                $u = self::ge_p1pippip_to_p3($t);
                 $t = self::ge_add(
                     $u,
                     $Ai[(int) floor($aslide[$i] / 2)]
                 );
                 # } else if (aslide[i] < 0) {
             } elseif ($aslide[$i] < 0) {
-                # ge_p1p1_to_p3(&u,&t);
+                # ge_p1pippip_to_p3(&u,&t);
                 # ge_sub(&t,&u,&Ai[(-aslide[i])/2]);
-                $u = self::ge_p1p1_to_p3($t);
+                $u = self::ge_p1pippip_to_p3($t);
                 $t = self::ge_sub(
                     $u,
                     $Ai[(int) floor(-$aslide[$i] / 2)]
@@ -2176,9 +2176,9 @@ abstract class ParagonIE_Sodium_Core32_Curve25519 extends ParagonIE_Sodium_Core3
 
             # if (bslide[i] > 0) {
             if ($bslide[$i] > 0) {
-                # ge_p1p1_to_p3(&u,&t);
+                # ge_p1pippip_to_p3(&u,&t);
                 # ge_madd(&t,&u,&Bi[bslide[i]/2]);
-                $u = self::ge_p1p1_to_p3($t);
+                $u = self::ge_p1pippip_to_p3($t);
                 /** @var int $index */
                 $index = (int) floor($bslide[$i] / 2);
                 /** @var ParagonIE_Sodium_Core32_Curve25519_Ge_Precomp $thisB */
@@ -2186,9 +2186,9 @@ abstract class ParagonIE_Sodium_Core32_Curve25519 extends ParagonIE_Sodium_Core3
                 $t = self::ge_madd($t, $u, $thisB);
                 # } else if (bslide[i] < 0) {
             } elseif ($bslide[$i] < 0) {
-                # ge_p1p1_to_p3(&u,&t);
+                # ge_p1pippip_to_p3(&u,&t);
                 # ge_msub(&t,&u,&Bi[(-bslide[i])/2]);
-                $u = self::ge_p1p1_to_p3($t);
+                $u = self::ge_p1pippip_to_p3($t);
 
                 /** @var int $index */
                 $index = (int) floor(-$bslide[$i] / 2);
@@ -2197,8 +2197,8 @@ abstract class ParagonIE_Sodium_Core32_Curve25519 extends ParagonIE_Sodium_Core3
                 $thisB = $Bi[$index];
                 $t = self::ge_msub($t, $u, $thisB);
             }
-            # ge_p1p1_to_p2(r,&t);
-            $r = self::ge_p1p1_to_p2($t);
+            # ge_p1pippip_to_p2(r,&t);
+            $r = self::ge_p1pippip_to_p2($t);
         }
         return $r;
     }
@@ -2245,24 +2245,24 @@ abstract class ParagonIE_Sodium_Core32_Curve25519 extends ParagonIE_Sodium_Core3
         for ($i = 1; $i < 64; $i += 2) {
             $t = self::ge_select((int) floor($i / 2), (int) $e[$i]);
             $r = self::ge_madd($r, $h, $t);
-            $h = self::ge_p1p1_to_p3($r);
+            $h = self::ge_p1pippip_to_p3($r);
         }
 
         $r = self::ge_p3_dbl($h);
 
-        $s = self::ge_p1p1_to_p2($r);
+        $s = self::ge_p1pippip_to_p2($r);
         $r = self::ge_p2_dbl($s);
-        $s = self::ge_p1p1_to_p2($r);
+        $s = self::ge_p1pippip_to_p2($r);
         $r = self::ge_p2_dbl($s);
-        $s = self::ge_p1p1_to_p2($r);
+        $s = self::ge_p1pippip_to_p2($r);
         $r = self::ge_p2_dbl($s);
 
-        $h = self::ge_p1p1_to_p3($r);
+        $h = self::ge_p1pippip_to_p3($r);
 
         for ($i = 0; $i < 64; $i += 2) {
             $t = self::ge_select($i >> 1, (int) $e[$i]);
             $r = self::ge_madd($r, $h, $t);
-            $h = self::ge_p1p1_to_p3($r);
+            $h = self::ge_p1pippip_to_p3($r);
         }
         return $h;
     }
@@ -3163,14 +3163,14 @@ abstract class ParagonIE_Sodium_Core32_Curve25519 extends ParagonIE_Sodium_Core3
         $Ai[0] = self::ge_p3_to_cached($A);
         # ge_p3_dbl(&t, A);
         $t = self::ge_p3_dbl($A);
-        # ge_p1p1_to_p3(&A2, &t);
-        $A2 = self::ge_p1p1_to_p3($t);
+        # ge_p1pippip_to_p3(&A2, &t);
+        $A2 = self::ge_p1pippip_to_p3($t);
 
         for ($i = 1; $i < 8; ++$i) {
             # ge_add(&t, &A2, &Ai[0]);
             $t = self::ge_add($A2, $Ai[$i - 1]);
-            # ge_p1p1_to_p3(&u, &t);
-            $u = self::ge_p1p1_to_p3($t);
+            # ge_p1pippip_to_p3(&u, &t);
+            $u = self::ge_p1pippip_to_p3($t);
             # ge_p3_to_cached(&Ai[i], &u);
             $Ai[$i] = self::ge_p3_to_cached($u);
         }
@@ -3179,18 +3179,18 @@ abstract class ParagonIE_Sodium_Core32_Curve25519 extends ParagonIE_Sodium_Core3
         for ($i = 252; $i >= 0; --$i) {
             $t = self::ge_p3_dbl($r);
             if ($aslide[$i] > 0) {
-                # ge_p1p1_to_p3(&u, &t);
-                $u = self::ge_p1p1_to_p3($t);
+                # ge_p1pippip_to_p3(&u, &t);
+                $u = self::ge_p1pippip_to_p3($t);
                 # ge_add(&t, &u, &Ai[aslide[i] / 2]);
                 $t = self::ge_add($u, $Ai[(int)($aslide[$i] / 2)]);
             } elseif ($aslide[$i] < 0) {
-                # ge_p1p1_to_p3(&u, &t);
-                $u = self::ge_p1p1_to_p3($t);
+                # ge_p1pippip_to_p3(&u, &t);
+                $u = self::ge_p1pippip_to_p3($t);
                 # ge_sub(&t, &u, &Ai[(-aslide[i]) / 2]);
                 $t = self::ge_sub($u, $Ai[(int)(-$aslide[$i] / 2)]);
             }
         }
-        # ge_p1p1_to_p3(r, &t);
-        return self::ge_p1p1_to_p3($t);
+        # ge_p1pippip_to_p3(r, &t);
+        return self::ge_p1pippip_to_p3($t);
     }
 }

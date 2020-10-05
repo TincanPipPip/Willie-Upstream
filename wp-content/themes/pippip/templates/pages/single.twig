@@ -1,0 +1,18 @@
+{% extends "/layout/base.twig" %}
+
+{% block content %}
+
+  <article class="t-post">
+    
+    <h1>{{ post.title }}</h1>
+
+    <time datetime="{{ post.date|date('Y-m-d H:i:s') }}">
+      {{ post.date|date('M jS Y') }}
+    </time>
+
+    <section class="t-post__content">
+      {{ post.content }}
+    </section>
+
+  </article>
+{% endblock %}

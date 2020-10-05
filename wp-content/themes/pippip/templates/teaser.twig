@@ -1,0 +1,15 @@
+{# {% include '/blocks/partial/card.twig' with {
+  type: 'news',
+  content: {
+    image: post.get_thumbnail,
+    title: post.title,
+    copy: post.preview.length(20).read_more(''),
+    extraCopy : post.get_field('featured_in'),
+    ttr: true,
+    buttonLabel: post.category,
+    buttonLink: post.category.link,
+    buttonClass: 'a-btn--sm',
+    secondaryLink: post.link
+  }
+} %} #}
+teaser
