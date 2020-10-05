@@ -16,7 +16,7 @@ Contents:
 
 ## About
 
-Pippip v3 is a Drupal 8 base theme, utilising Laravel Mix, Browsersync, ES6 & SASS. Styles and templates structure loosely follows the [Patterlab methodology](https://patternlab.io/).
+Pippip is a Wordpress base theme, utilising Laravel Mix, Browsersync, ES6 & SASS. Styles and templates structure loosely follows the [Patterlab methodology](https://patternlab.io/).
 
 #### Browser support
 
@@ -51,11 +51,11 @@ https://github.com/MohamedLamineAllal/laravel-mix-glob
 
 ## Icons
 
-Icons can be imported directly into **.twig** files using `{{ get_icon('icon') }}`.
+Icons can be imported directly into **.twig** files using `{% include 'img/x.svg' ignore missing %}`.
 
 ## CSS
 
-Pippip v3 is [SASS](https://sass-lang.com) based.
+Pippip is [SASS](https://sass-lang.com) based.
 
 #### Included helper classes
 
@@ -80,7 +80,7 @@ See [documentation](http://reflexgrid.com/docs/) for details & usage.
 
 ## JS
 
-Pippip v3 is ES6 based (rather than jQuery) by default, and gets converted to ES5 on compile for better browser support.
+Pippip is ES6 based (rather than jQuery) by default, and gets converted to ES5 on compile for better browser support.
 
 #### Included JS files
 

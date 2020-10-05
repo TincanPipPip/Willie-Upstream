@@ -2,7 +2,7 @@
   <div class="o-header__inner">
   
     <a class="o-header__logo" href="{{site.url}}" rel="home" aria-label="{{ site.name }}" title="{{ site.name }}">
-      <img src="{{ theme.path }}/dist/img/logo.png" alt="{{ site.name }}" />
+      <img src="{% include 'img/logo.svg' ignore missing %}" alt="{{ site.name }}" />
     </a>
 
     <nav class="m-nav m-nav--main" role="navigation">
