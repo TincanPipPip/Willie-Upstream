@@ -11,6 +11,14 @@
   gap: $bump/1.5;
   align-items: center;
 
+  &-alt {
+    grid-template-columns: 1fr 40%;
+
+    img {
+      order: 2;
+    }
+  }
+
   @include media('<md') {
     grid-template-columns: 1fr;
     gap: $bump/2;

@@ -1,0 +1,29 @@
+{#
+/**
+ * Block Name: Image & Text
+ */
+#}
+{% if is_preview %}
+  <h4 class="preview-title">Image & Text block</h4>
+{% endif %}
+
+<section class="m-entity m-entity__image-text {% if fields.alignment %}m-entity__image-text-alt{% endif %}">
+
+  <img 
+    alt="{{ fields.image.alt }}" 
+    {% if is_preview %}
+      src="{{ Image(fields.image).src('large') }}"
+    {% else %}    
+      data-src="{{ Image(fields.image).src('large') }}" 
+      class="lazy"
+    {% endif %}
+  />
+
+  <div class="m-entity__image-text-content">
+    {% if fields.title %}
+      <h3>{{ fields.title }}</h3>
+    {% endif %}
+
+    {{ fields.copy }}
+  </div>
+</section>

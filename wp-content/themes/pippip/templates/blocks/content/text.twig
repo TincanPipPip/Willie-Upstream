@@ -1,0 +1,15 @@
+{#
+/**
+ * Block Name: Text
+ */
+#}
+
+{% if is_preview %}
+  <h4 class="preview-title">Text block</h4>
+{% endif %}
+
+<section class="m-entity m-entity__text">
+  {% include '_partials/atoms/block-title.twig' %}
+
+  {{ fields.copy }}
+</section>

@@ -1,7 +1,10 @@
 {
-    "/js/defaults.js": "/js/defaults.js?id=a84a11804626eade3dd9",
-    "/css/global.css": "/css/global.css?id=0aee3feac433257723da",
+    "/js/admin.accordion.js": "/js/admin.accordion.js?id=81e1f1559395ec91f733",
+    "/css/admin.css": "/css/admin.css?id=b5efd81121ea39379401",
+    "/css/global.css": "/css/global.css?id=9cc5f5c2889b386e3126",
     "/css/print.css": "/css/print.css?id=dd04120b41b74bbd68ab",
-    "/js/emmsg.js": "/js/emmsg.js?id=079d1b4fa497dcc8b697",
-    "/js/global.js": "/js/global.js?id=3009b524fae8963e61f7"
+    "/js/admin.gallery.js": "/js/admin.gallery.js?id=1959fe1a502c1851dec9",
+    "/js/defaults.js": "/js/defaults.js?id=47e4607bfe58a09a4304",
+    "/js/emmsg.js": "/js/emmsg.js?id=91f66e72e2193eedd49b",
+    "/js/global.js": "/js/global.js?id=b195df233f28673b64aa"
 }

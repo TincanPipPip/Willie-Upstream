@@ -1,0 +1,16 @@
+/**
+ * ----------------------
+ * Un.titled
+ * Molecules - Linked logos
+ * ----------------------
+ */
+
+&__linked-logos {
+  a {
+    display: block;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

@@ -21,30 +21,29 @@ add_filter( 'allowed_block_types', 'pippip_allowed_block_types' );
 
 function pippip_allowed_block_types( $allowed_blocks ) { 
   return array(
-    'acf/header',
-    'acf/primary-cta',
-    'acf/secondary-cta',
-    'acf/tertiary-cta',
-    'acf/product-ctas',
-    'acf/download-cta',
-    'acf/invest-cta',
-    'acf/support-cta',
-    'acf/products-list',
-    'acf/platform-features-carousel',
-    'acf/platform-tiles',
-    'acf/why-choose',
-    'acf/key-benefits',
-    'acf/help-you-list',
-    'acf/stacked-tiles',
-    'acf/careers-cards',
-    'acf/people-cards',
-    'acf/accreditation',
-    'acf/testimonials',
-    'acf/quotes',
-    'acf/integrations',
-    'acf/short-copy',
-    'acf/long-copy',
-    'acf/body-copy',
-    'acf/faqs',
+    'acf/text',
+    'acf/accordion',
+    'acf/video',
+    'acf/gallery',
+    'acf/image',
+    'acf/downloads',
+    'acf/embed',
+    'acf/quote',
+    'acf/linkedlogos',
+    'acf/cta',
+    'acf/imagetext',
   );
+}
+
+
+/**
+ * Remove Gutenberg default styling
+ */
+
+add_filter( 'block_editor_settings' , 'remove_gutenberg_wrapper_styles' );
+
+function remove_gutenberg_wrapper_styles( $settings ) {
+  unset($settings['styles'][0]);
+
+  return $settings;
 }

@@ -40,7 +40,7 @@ mix.options({
 mix.browserSync({
   proxy: `https://${hostname}`,
   ghostMode: false,
-  files: ['templates/**/*.+(html|twig)', 'assets/sass/**/*.scss', 'assets/js/*.js'],
+  files: ['templates/**/*.twig', 'assets/sass/**/*.scss', 'assets/js/*.js'],
 });
 
 if (mix.inProduction()) {

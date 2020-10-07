@@ -1,0 +1,21 @@
+{#
+/**
+ * Block Name: Quote
+ */
+#}
+
+{% if is_preview %}
+  <h4 class="preview-title">Quote block</h4>
+{% endif %}
+
+<section class="m-entity m-entity__quote">
+  <blockquote>
+    {{ fields.quote }}
+  </blockquote>
+
+  {% if fields.cite %}
+    <cite>
+      {{ fields.cite }}
+    </cite>
+  {% endif %}
+</section>

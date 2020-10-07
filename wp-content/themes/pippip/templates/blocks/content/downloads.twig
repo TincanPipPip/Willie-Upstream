@@ -1,0 +1,19 @@
+{#
+/**
+ * Block Name: Downloads
+ */
+#}
+
+{% if is_preview %}
+  <h4 class="preview-title">Downloads block</h4>
+{% endif %}
+
+<section class="m-entity m-entity__downloads">
+  {% include '_partials/atoms/block-title.twig' %}
+
+  <div class="a-grid a-gird--1">
+    {% for download in fields.downloads %}
+      <a href="{{ download.file.url }}">{{ download.file.title }}</a>
+    {% endfor %}
+  </div>
+</section>

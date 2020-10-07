@@ -1,0 +1,17 @@
+{#
+/**
+ * Block Name: Video
+ */
+#}
+
+{% if is_preview %}
+  <h4 class="preview-title">Video block</h4>
+{% endif %}
+
+<section class="m-entity m-entity__video">
+  {% include '_partials/atoms/block-title.twig' %}
+
+  <div class="video-container">
+    {{ fields.video }}
+  </div>
+</section>

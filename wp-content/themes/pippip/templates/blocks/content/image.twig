@@ -1,0 +1,23 @@
+{#
+/**
+ * Block Name: Image
+ */
+#}
+
+{% if is_preview %}
+  <h4 class="preview-title">Image block</h4>
+{% endif %}
+
+<section class="m-entity m-entity__image">
+  {% include '_partials/atoms/block-title.twig' %}
+
+  <img 
+    {% if is_preview %}
+      src="{{ Image(fields.image).src }}"
+    {% else %}
+      data-src="{{ Image(fields.image).src }}"
+      class="lazy"
+    {% endif %}
+    alt="{{ fields.image.alt }}"
+  />
+</section>

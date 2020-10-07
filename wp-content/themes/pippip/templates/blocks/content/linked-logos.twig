@@ -1,0 +1,35 @@
+{#
+/**
+ * Block Name: Linked Logos
+ */
+#}
+
+{% if is_preview %}
+  <h4 class="preview-title">Linked logos block</h4>
+{% endif %}
+
+<section class="m-entity m-entity__linked-logos">
+  {% include '_partials/atoms/block-title.twig' %}
+
+  <div class="a-grid a-grid--4">
+    {% for logo in fields.logos %}
+      {% if logo.link.url %}
+        <a href="{{ logo.link.url }}" aria-label="{{ logo.link.title }}">
+      {% endif %}
+
+      <img 
+        alt="{{ logo.logo.alt }}"
+        {% if is_preview %}
+          src="{{ Image(logo.logo).src|resize(0, 50) }}" 
+        {% else %}
+          data-src="{{ Image(logo.logo).src|resize(0, 50) }}" 
+          class="lazy" 
+        {% endif %}
+      />
+
+      {% if logo.link.url %}
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c549ccdbfd9d2516b2f76e1b04bd95f2",
+    "content-hash": "71b5d27d986438241578ebd3aea23625",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -506,6 +506,42 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wordpress-seo/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-cfm",
+            "version": "1.6",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-cfm/",
+                "reference": "tags/1.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-cfm.1.6.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-cfm/"
+        },
+        {
+            "name": "wpackagist-plugin/wps-hide-login",
+            "version": "1.5.6",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wps-hide-login/",
+                "reference": "tags/1.5.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wps-hide-login.1.5.6.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wps-hide-login/"
         }
     ],
     "packages-dev": [],

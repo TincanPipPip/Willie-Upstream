@@ -1,0 +1,29 @@
+{#
+/**
+ * Block Name: Gallery
+ */
+#}
+
+{% if is_preview %}
+  <h4 class="preview-title">Gallery block</h4>
+{% endif %}
+
+<section class="m-entity m-entity__gallery">
+  {% include '_partials/atoms/block-title.twig' %}
+
+  <div class="a-grid a-grid--3 gallery">
+    {% for image in fields.images %}
+      <a href="{{ Image(image).src }}" aria-label="View {{ image.alt }} fullsize">
+        <img 
+          {% if is_preview %}
+            src="{{ Image(image).src|resize(300, 300) }}"
+          {% else %}
+            data-src="{{ Image(image).src|resize(300, 300) }}"
+            class="lazy"
+          {% endif %}
+          alt="{{ image.alt }}"
+        />
+      </a>
+    {% endfor %}
+  </div>
+</section>

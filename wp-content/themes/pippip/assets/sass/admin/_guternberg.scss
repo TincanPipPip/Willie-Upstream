@@ -1,0 +1,44 @@
+/**
+* ----------------------
+* Un.titled
+* Admin - Gutenberg
+* ----------------------
+*/
+
+/**
+* Config
+*/
+
+/**
+* Styling
+*/
+.wp-block {
+  width: 100%;
+  max-width: $container-width;
+  margin: $bump * 1.5 $bump/2;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  padding: $bump;
+
+  &:hover {
+    border-color: rgba(0, 0, 0, 0.2);
+  }
+
+  p {
+    @include font-body;
+    font-size: 1rem;
+  }
+}
+
+.interface-interface-skeleton__sidebar {
+  width: 20%;
+  min-width: 300px;
+
+  .interface-complementary-area {
+    width: 100%;
+  }
+}
+
+.preview-title {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: $bump/5;
+}

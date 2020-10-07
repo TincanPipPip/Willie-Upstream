@@ -1,8 +1,5 @@
 /* 
-* Main column width
-* This changes it from the default 580px to 1120px
+* Gutenberg preview styling
 */
 
-.wp-block {
-  max-width: 1500px;
-}
+@import url('/wp-content/themes/pippip/dist/css/admin.css');
