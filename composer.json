@@ -32,7 +32,7 @@
   },
   "extra": {
     "installer-paths": {
-      "wp-content/mu-plugins/{$name}/": ["type:wordpress-muplugin", "wpackagist-plugin/timber-library", "wpackagist-plugin/redirection", "wpackagist-plugin/wordpress-seo", "wpackagist-plugin/wps-hide-login"],
+      "wp-content/mu-plugins/{$name}/": ["type:wordpress-muplugin", "wpackagist-plugin/timber-library", "wpackagist-plugin/redirection", "wpackagist-plugin/wordpress-seo", "wpackagist-plugin/wps-hide-login", "wpackagist-plugin/wp-cfm"],
       "wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
       "wp-content/themes/{$name}/": ["type:wordpress-theme"]
     }
