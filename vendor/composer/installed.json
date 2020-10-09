@@ -461,26 +461,6 @@
         ]
     },
     {
-        "name": "wpackagist-plugin/advanced-tinymce-configuration",
-        "version": "1.6",
-        "version_normalized": "1.6.0.0",
-        "source": {
-            "type": "svn",
-            "url": "https://plugins.svn.wordpress.org/advanced-tinymce-configuration/",
-            "reference": "tags/1.6"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://downloads.wordpress.org/plugin/advanced-tinymce-configuration.1.6.zip"
-        },
-        "require": {
-            "composer/installers": "~1.0"
-        },
-        "type": "wordpress-plugin",
-        "installation-source": "dist",
-        "homepage": "https://wordpress.org/plugins/advanced-tinymce-configuration/"
-    },
-    {
         "name": "wpackagist-plugin/redirection",
         "version": "4.8",
         "version_normalized": "4.8.0.0",
@@ -519,26 +499,6 @@
         "type": "wordpress-plugin",
         "installation-source": "dist",
         "homepage": "https://wordpress.org/plugins/timber-library/"
-    },
-    {
-        "name": "wpackagist-plugin/tinymce-advanced",
-        "version": "5.5.1",
-        "version_normalized": "5.5.1.0",
-        "source": {
-            "type": "svn",
-            "url": "https://plugins.svn.wordpress.org/tinymce-advanced/",
-            "reference": "tags/5.5.1"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://downloads.wordpress.org/plugin/tinymce-advanced.5.5.1.zip"
-        },
-        "require": {
-            "composer/installers": "~1.0"
-        },
-        "type": "wordpress-plugin",
-        "installation-source": "dist",
-        "homepage": "https://wordpress.org/plugins/tinymce-advanced/"
     },
     {
         "name": "wpackagist-plugin/wordpress-seo",

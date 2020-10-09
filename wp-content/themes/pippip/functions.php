@@ -7,6 +7,7 @@
 require('inc/timber.php');
 require('inc/remove-comments.php');
 require('inc/cleanup.php');
+require('inc/wysiwyg.php');
 
 
 /**

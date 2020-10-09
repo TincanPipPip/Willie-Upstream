@@ -28,13 +28,11 @@
     "wpackagist-plugin/redirection": "^4.8",
     "wpackagist-plugin/wordpress-seo": "^15.0",
     "wpackagist-plugin/wps-hide-login": "^1.5",
-    "wpackagist-plugin/wp-cfm": "^1.6",
-    "wpackagist-plugin/advanced-tinymce-configuration": "^1.6",
-    "wpackagist-plugin/tinymce-advanced": "^5.5"
+    "wpackagist-plugin/wp-cfm": "^1.6"
   },
   "extra": {
     "installer-paths": {
-      "wp-content/mu-plugins/{$name}/": ["type:wordpress-muplugin", "wpackagist-plugin/timber-library", "wpackagist-plugin/redirection", "wpackagist-plugin/wordpress-seo", "wpackagist-plugin/wps-hide-login", "wpackagist-plugin/wp-cfm", "wpackagist-plugin/advanced-tinymce-configuration", "wpackagist-plugin/tinymce-advanced"],
+      "wp-content/mu-plugins/{$name}/": ["type:wordpress-muplugin", "wpackagist-plugin/timber-library", "wpackagist-plugin/redirection", "wpackagist-plugin/wordpress-seo", "wpackagist-plugin/wps-hide-login", "wpackagist-plugin/wp-cfm"],
       "wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
       "wp-content/themes/{$name}/": ["type:wordpress-theme"]
     }
