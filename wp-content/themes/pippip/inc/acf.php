@@ -14,6 +14,7 @@ if( function_exists('acf_add_options_page') ) {
 	));
 }
 
+$context['theme_options'] = get_fields('options');
 
 /**
  * ACF Gutenberg block categories setup
