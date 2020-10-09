@@ -14,7 +14,12 @@ if( function_exists('acf_add_options_page') ) {
 	));
 }
 
-$context['theme_options'] = get_fields('options');
+function pippip_timber_context( $context ) {
+  $context['options'] = get_fields('option');
+  return $context;
+}
+
+add_filter( 'timber_context', 'pippip_timber_context' );
 
 /**
  * ACF Gutenberg block categories setup
