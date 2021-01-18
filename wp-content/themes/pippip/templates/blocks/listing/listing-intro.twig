@@ -1,0 +1,8 @@
+{% if is_preview %}
+  <h4 class="preview-title">Listing Banner</h4>
+{% endif %}
+
+{% include "/molecules/banner-alt.twig" with {
+  strapline: '<p class="standout">' ~ fields.strapline ~ '</p>',
+  cta: true
+} %}

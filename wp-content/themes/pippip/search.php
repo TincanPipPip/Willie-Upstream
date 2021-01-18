@@ -9,10 +9,8 @@
  * @since   Timber 0.1
  */
 
-$templates = array( 'search.twig', 'archive.twig', 'index.twig' );
-
 $context          = Timber::context();
 $context['title'] = 'Search results for ' . get_search_query();
 $context['posts'] = new Timber\PostQuery();
 
-Timber::render( $templates, $context );
+Timber::render( 'search/search-results.twig', $context );

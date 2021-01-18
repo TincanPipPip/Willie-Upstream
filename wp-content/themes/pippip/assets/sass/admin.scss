@@ -8,16 +8,15 @@
 /**
  * Dependencies
  */
-@import '~modularscale-sass/stylesheets/modularscale';
 @import '~baguettebox.js/src/baguetteBox';
 @import '~include-media/dist/_include-media';
+@import '~reflex-grid/scss/reflex.scss';
 // @import '~choices.js/public/assets/styles/choices.min.css';
 
 /**
 * Config
 */
-@import 'config/layout';
-@import 'config/typography';
+@import 'config/fonts';
 @import 'config/vars';
 
 /**
@@ -26,7 +25,6 @@
 @import 'helpers/focus-visible';
 @import 'helpers/font-smoothing';
 @import 'helpers/mixins';
-@import 'helpers/size';
 @import 'helpers/table';
 
 /**
@@ -48,6 +46,11 @@
 */
 @import 'molecules/entity';
 @import 'molecules/banner';
+
+/**
+* Organisms
+*/
+@import 'organisms/teaser';
 
 /**
 * Admin specific

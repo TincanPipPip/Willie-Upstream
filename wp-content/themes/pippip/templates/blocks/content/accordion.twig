@@ -1,19 +1,13 @@
-{#
-/**
- * Block Name: Accordion
- */
-#}
-
 {% if is_preview %}
   <h4 class="preview-title">Accordion block</h4>
 {% endif %}
 
 <section class="m-entity m-entity__accordion">
-  {% include '_partials/atoms/block-title.twig' %}
+  {% include '_partials/block-title.twig' %}
 
   <div class="js-accordion">
     {% for row in fields.accordion %}
-      <h3 class="js-accordion__header">{{ row.title }}</h3>
+      <h3 class="h4 js-accordion__header">{{ row.title }}</h3>
       <div class="js-accordion__panel">
         {{ row.copy }}
       </div>

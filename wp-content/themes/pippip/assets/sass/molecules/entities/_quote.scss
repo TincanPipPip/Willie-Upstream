@@ -9,20 +9,24 @@
  * Config
  */
 
+@mixin rating($stars) {
+  &:nth-child(-n + #{$stars}) {
+    path {
+      fill: var(--c-primary);
+      stroke: var(--c-primary);
+    }
+  }
+}
+
 /**
  * Styles
  */
 
 &__quote {
   blockquote {
-    @include font-title;
+    font-family: var(--fontTitle);
     margin: 0;
-    padding: 0 0 $bump/2;
-    @include ms-respond(font-size, 1);
-
-    @include media('<sm') {
-      @include ms-respond(font-size, 0);
-    }
+    padding: 0 0 calc(var(--bump) / 2);
 
     p {
       margin-bottom: 0;
@@ -37,11 +41,35 @@
   }
 
   cite {
-    @include font-body;
+    font-family: var(--fontBody);
     font-style: normal;
 
     .name {
-      @include font-bold;
+      font-weight: bold;
+    }
+  }
+
+  .rating {
+    display: inline-flex;
+    margin-right: calc(var(--bump) / 2);
+
+    &__star {
+      width: 24px;
+      height: 24px;
+      margin-right: 5px;
+      stroke: var(--c-primary);
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    @for $stars from 1 through 5 {
+      &--#{$stars} {
+        .rating__star {
+          @include rating(#{$stars});
+        }
+      }
     }
   }
 }

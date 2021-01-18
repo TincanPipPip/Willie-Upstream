@@ -1,23 +1,22 @@
-{#
-/**
- * Block Name: Image
- */
-#}
-
 {% if is_preview %}
   <h4 class="preview-title">Image block</h4>
 {% endif %}
 
 <section class="m-entity m-entity__image">
-  {% include '_partials/atoms/block-title.twig' %}
+  {% include '_partials/block-title.twig' %}
+  <div class="m-entity__image-wrapper">
+    <img 
+      {% if is_preview %}
+        src="{{ Image(fields.image).src }}"
+      {% else %}
+        data-src="{{ Image(fields.image).src }}"
+        class="lazy"
+      {% endif %}
+      alt="{{ fields.image.alt }}"
+    />
 
-  <img 
-    {% if is_preview %}
-      src="{{ Image(fields.image).src }}"
-    {% else %}
-      data-src="{{ Image(fields.image).src }}"
-      class="lazy"
-    {% endif %}
-    alt="{{ fields.image.alt }}"
-  />
+    {% include "/atoms/image-credit.twig" with {
+      credit: fields.image.caption
+    } %}
+  </div>
 </section>

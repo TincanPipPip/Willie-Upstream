@@ -1,7 +1,10 @@
 <?php
 
 /**
+ * ----------------------
+ * Un.titled
  * Remove comments globally
+ * ----------------------
  */
 
 add_action('admin_init', function () {

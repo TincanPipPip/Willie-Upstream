@@ -1,8 +1,14 @@
 <?php
 
 /**
- * Customise default WYSIWYG fields
+ * ----------------------
+ * Un.titled
+ * Custom WYSIWYG editor
+ * ----------------------
  */
+
+add_filter( 'tiny_mce_before_init', 'pippip_tinymce' );
+add_filter( 'acf/fields/wysiwyg/toolbars' , 'pippip_acfToolbar' );
 
 function pippip_tinymce( $in ) {
 	$in['apply_source_formatting'] = false;
@@ -23,6 +29,3 @@ function pippip_acfToolbar( $toolbars ) {
   
 	return $toolbars;
 }
-
-add_filter( 'tiny_mce_before_init', 'pippip_tinymce' );
-add_filter('acf/fields/wysiwyg/toolbars' , 'pippip_acfToolbar');

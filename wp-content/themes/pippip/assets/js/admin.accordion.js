@@ -8,11 +8,10 @@ function initAccordion() {
   accordion.attach();
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  initAccordion();
-});
-
-// Initialize dynamic block preview (editor)
 if (window.acf) {
+  // Initialize dynamic block preview (editor)
+  document.addEventListener('DOMContentLoaded', function() {
+    initAccordion();
+  });
   window.acf.addAction('render_block_preview', initAccordion);
 }

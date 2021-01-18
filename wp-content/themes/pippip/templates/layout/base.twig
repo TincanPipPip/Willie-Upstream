@@ -14,10 +14,13 @@
 			{% include '/organisms/header.twig' %}
 		{% endblock %}
 
+    {% include "search/search-form.twig" %}
+
+
 		<main id="content" role="main">
-			
+    
 			{% if title %}
-        <h1>{{title}}</h1>
+        {% include "molecules/banner-alt.twig" %}
       {% endif %}
 
 			{% block content %}
@@ -28,8 +31,12 @@
 
 		{% block footer %}
 			{% include '/organisms/footer.twig' %}
-
-			{{ function('wp_footer') }}
 		{% endblock %}
+
+    {% if options.show_message %}
+      {% include "/molecules/emmsg.twig" %}
+    {% endif %}
+
+		{{ function('wp_footer') }}
 	</body>
 </html>

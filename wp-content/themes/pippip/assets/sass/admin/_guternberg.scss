@@ -12,33 +12,60 @@
 /**
 * Styling
 */
+.postbox,
 .wp-block {
   width: 100%;
-  max-width: $container-width;
-  margin: $bump * 1.5 $bump/2;
+  max-width: var(--containerWidth);
+  margin: calc(var(--bump) * 1.5) calc(var(--bump) / 2);
+}
+
+.wp-block {
   border: 2px solid rgba(0, 0, 0, 0.1);
-  padding: $bump;
+  padding: var(--bump);
+  background-color: var(--c-white-dk);
 
   &:hover {
     border-color: rgba(0, 0, 0, 0.2);
   }
 
   p {
-    @include font-body;
+    font-family: var(--fontBody);
     font-size: 1rem;
   }
 }
 
-.interface-interface-skeleton__sidebar {
-  width: 20%;
-  min-width: 300px;
-
-  .interface-complementary-area {
-    width: 100%;
+.postbox {
+  * {
+    font-size: 1rem;
   }
+
+  .select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: var(--c-primary);
+  }
+}
+
+.meta-box-sortables {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.interface-complementary-area {
+  width: 25vw;
+  min-width: 300px;
 }
 
 .preview-title {
   border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-  padding-bottom: $bump/5;
+  padding-bottom: calc(var(--bump) / 5);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: inherit;
 }

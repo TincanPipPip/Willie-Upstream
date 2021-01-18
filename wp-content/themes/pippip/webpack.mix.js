@@ -18,7 +18,7 @@ const mix = require('laravel-mix'),
 /**
  * Variables
  */
-const hostname = 'willie.local',
+const hostname = 'courtauld.local',
   basePath = './assets',
   glob = new mixGlob({ mix });
 
@@ -32,7 +32,7 @@ mix.options({
   processCssUrls: false,
   postCss: [
     require('autoprefixer')({
-      grid: 'no-autoplace',
+      // grid: 'no-autoplace',
     }),
   ],
 });
@@ -40,7 +40,7 @@ mix.options({
 mix.browserSync({
   proxy: `https://${hostname}`,
   ghostMode: false,
-  files: ['templates/**/*.twig', 'assets/sass/**/*.scss', 'assets/js/*.js'],
+  files: ['templates/**/*.twig', 'assets/sass/**/*.scss', 'assets/js/*.js', 'assets/js/**/*.js'],
 });
 
 if (mix.inProduction()) {
@@ -82,7 +82,6 @@ mix.webpackConfig({
   resolve: {
     alias: {
       modernizr$: path.resolve(__dirname, '.modernizrrc.js'),
-      swiper$: 'swiper/dist/js/swiper.js',
     },
   },
   plugins: [

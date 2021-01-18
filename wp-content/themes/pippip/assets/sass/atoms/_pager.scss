@@ -1,0 +1,44 @@
+/**
+* ----------------------
+* Un.titled
+* Atoms - Pagination
+* ----------------------
+*/
+
+/**
+* Config
+*/
+
+/**
+* Styling
+*/
+.a-pager {
+  @include li-reset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .disabled {
+    display: none;
+    visibility: hidden;
+  }
+
+  span,
+  a {
+    text-decoration: none;
+    display: block;
+    padding: $bump/2;
+  }
+
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  span,
+  a.undefined {
+    text-decoration: underline;
+  }
+}

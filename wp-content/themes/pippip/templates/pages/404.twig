@@ -1,5 +1,44 @@
 {% extends "/layout/base.twig" %}
 
 {% block content %}
-	Sorry, we couldn't find what you're looking for.
+	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}" data-template="page.twig">
+
+    <div class="m-banner m-banner--page" role="banner">
+
+      <div class="grid justify-end">
+        <div class="col-sm-11 col-bleed-y">
+
+          {% set imageXs = Image(options.fourohfour_image).src|resize('400','700') %}
+          {% set imageSm = Image(options.fourohfour_image).src|resize('800','800') %}
+          {% set imageMd = Image(options.fourohfour_image).src|resize('1100','580') %}
+          {% set imageBg = Image(options.fourohfour_image).src|resize('1920','1000') %}
+
+          <picture>
+            <source media="(max-width: 400px)" data-srcset="{{ imageXs }}" type="image/jpeg">
+            <source media="(max-width: 800px)" data-srcset="{{ imageSm }}" type="image/jpeg">
+            <source media="(max-width: 1100px)" data-srcset="{{ imageMd }}" type="image/jpeg">
+            
+            <img data-src="{{ imageBg }}" class="lazy" alt="{{ options.fourohfour_image.alt }}" />
+          </picture>
+
+          {% include "/atoms/image-credit.twig" with {
+            credit: options.fourohfour_image.caption
+          } %}
+
+        </div>
+      </div>
+
+    </div>
+
+    <section class="o-page">
+      <div class="o-page__col o-page__left {% if not post.thumbnail.src %}o-page__left--noimg{% endif %}">
+        <h1 class="h2">{{ options.fourohfour_title }}</h1>
+
+        <div class="m-entity m-entity__body">
+          {{ options.fourohfour_copy }}
+        </div>
+      </div>
+    </section>
+
+	</article>
 {% endblock %}

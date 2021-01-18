@@ -1,7 +1,10 @@
 <?php
 
 /**
- * Content modules
+ * ----------------------
+ * Un.titled
+ * Gutenberg flexible content blocks
+ * ----------------------
  */
 
 acf_register_block( array(
@@ -15,7 +18,7 @@ acf_register_block( array(
   'supports'        => array(
     'align' => false,
   ),
-  'mode'            => 'edit',
+  'mode'            => 'auto',
 ) );
 
 acf_register_block( array(
@@ -32,7 +35,7 @@ acf_register_block( array(
   'enqueue_assets'	=> function(){
     wp_enqueue_script('accordions', get_template_directory_uri() . '/dist/js/admin.accordion.js', array(), null, true );
   },
-  'mode'            => 'edit',
+  'mode'            => 'auto',
 ) );
 
 acf_register_block( array(
@@ -46,7 +49,7 @@ acf_register_block( array(
   'supports'        => array(
     'align' => false,
   ),
-  'mode'            => 'edit',
+  'mode'            => 'auto',
 ) );
 
 acf_register_block( array(
@@ -61,9 +64,9 @@ acf_register_block( array(
     'align' => false,
   ),
   'enqueue_assets'	=> function(){
-    wp_enqueue_script('accordions', get_template_directory_uri() . '/dist/js/admin.gallery.js', array(), null, true );
+    wp_enqueue_script('gallery', get_template_directory_uri() . '/dist/js/admin.gallery.js', array(), null, true );
   },
-  'mode'            => 'edit',
+  'mode'            => 'auto',
 ) );
 
 acf_register_block( array(
@@ -77,7 +80,7 @@ acf_register_block( array(
   'supports'        => array(
     'align' => false,
   ),
-  'mode'            => 'edit',
+  'mode'            => 'auto',
 ) );
 
 acf_register_block( array(
@@ -91,7 +94,7 @@ acf_register_block( array(
   'supports'        => array(
     'align' => false,
   ),
-  'mode'            => 'edit',
+  'mode'            => 'auto',
 ) );
 
 acf_register_block( array(
@@ -105,7 +108,7 @@ acf_register_block( array(
   'supports'        => array(
     'align' => false,
   ),
-  'mode'            => 'edit',
+  'mode'            => 'auto',
 ) );
 
 acf_register_block( array(
@@ -119,7 +122,7 @@ acf_register_block( array(
   'supports'        => array(
     'align' => false,
   ),
-  'mode'            => 'edit',
+  'mode'            => 'auto',
 ) );
 
 acf_register_block( array(
@@ -133,7 +136,7 @@ acf_register_block( array(
   'supports'        => array(
     'align' => false,
   ),
-  'mode'            => 'edit',
+  'mode'            => 'auto',
 ) );
 
 acf_register_block( array(
@@ -147,7 +150,7 @@ acf_register_block( array(
   'supports'        => array(
     'align' => false,
   ),
-  'mode'            => 'edit',
+  'mode'            => 'auto',
 ) );
 
 acf_register_block( array(
@@ -161,5 +164,5 @@ acf_register_block( array(
   'supports'        => array(
     'align' => false,
   ),
-  'mode'            => 'edit',
+  'mode'            => 'auto',
 ) );

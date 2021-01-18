@@ -6,7 +6,7 @@
  */
 
 .grid {
-  max-width: $container-width;
+  max-width: var(--containerWidth);
 }
 
 .container-full > .grid {
@@ -20,7 +20,7 @@ ul.plain {
 
 img {
   -webkit-backface-visibility: hidden;
-  transition: 0.2s $easing;
+  transition: var(--transition);
 
   &.lazy {
     opacity: 0;
@@ -38,7 +38,7 @@ img {
 }
 
 .svg {
-  transition: all 0.2s $easing;
+  transition: all var(--transition);
 }
 
 .hidden {
@@ -47,7 +47,8 @@ img {
 }
 
 // Keep video ratio for fluid widths
-.video-container {
+.video-container,
+.media-vimeo-video {
   position: relative;
   padding-bottom: 56.25%;
   padding-top: 25px;

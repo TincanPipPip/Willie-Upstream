@@ -1,0 +1,9 @@
+{% extends "/layout/base.twig" %}
+
+{% block content %}
+	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}" data-template="page-listing.twig">
+
+    {{ post.content }}
+
+	</article>
+{% endblock %}

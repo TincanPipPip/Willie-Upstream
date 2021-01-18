@@ -5,20 +5,29 @@
  * ----------------------
  */
 
-.o-search-results {
-  // .result__title {
-  //   margin-bottom: 0;
-  // }
+#search-form {
+  display: none;
+  visibility: hidden;
+}
 
-  // &__list {
-  //   margin-bottom: $bump * 2;
+.o-search-results-wrapper {
+  h2 {
+    display: none;
+  }
 
-  //   ol {
-  //     @include li-reset;
+  .result__title {
+    margin-bottom: 0;
+  }
 
-  //     li {
-  //       margin-bottom: $bump;
-  //     }
-  //   }
-  // }
+  &__list {
+    margin-bottom: calc(var(--bump) * 2);
+
+    ol {
+      @include li-reset;
+
+      li {
+        margin-bottom: var(--bump);
+      }
+    }
+  }
 }

@@ -1,0 +1,6 @@
+<a href="{{ button.url }}" class="{{ classes|join(' ') }}" target={{ button.target }}>
+  {{ button.title }}
+  {% if hasIcon %}
+     {% include 'img/cta-icon.svg' ignore missing %}
+  {% endif %}  
+</a>

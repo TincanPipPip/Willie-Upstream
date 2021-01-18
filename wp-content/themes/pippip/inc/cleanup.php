@@ -1,8 +1,17 @@
 <?php
 
 /**
+ * ----------------------
+ * Un.titled
+ * Remove unwanted WP CSS, JS & Features
+ * ----------------------
+ */
+
+/**
  * Disable the emoji's
  */
+add_action( 'init', 'disable_emojis' );
+
 function disable_emojis() {
   remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
   remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
@@ -15,7 +24,6 @@ function disable_emojis() {
   add_filter( 'wp_resource_hints', 'disable_emojis_remove_dns_prefetch', 10, 2 );
 }
 
-add_action( 'init', 'disable_emojis' );
 
 /**
  * Filter function used to remove the tinymce emoji plugin.
@@ -30,6 +38,7 @@ function disable_emojis_tinymce( $plugins ) {
     return array();
   }
 }
+
 
 /**
  * Remove emoji CDN hostname from DNS prefetching hints.
@@ -46,4 +55,15 @@ function disable_emojis_remove_dns_prefetch( $urls, $relation_type ) {
   }
 
   return $urls;
+}
+
+
+/**
+ * Customise Admin Menu
+ */
+add_action( 'admin_bar_menu', 'customise_admin_menu', 999 );
+
+function customise_admin_menu( $wp_admin_bar ) {
+  $wp_admin_bar->remove_menu( 'customize' );
+  $wp_admin_bar->remove_menu( 'comments' );
 }

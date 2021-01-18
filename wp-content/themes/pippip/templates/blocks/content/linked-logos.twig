@@ -1,15 +1,9 @@
-{#
-/**
- * Block Name: Linked Logos
- */
-#}
-
 {% if is_preview %}
   <h4 class="preview-title">Linked logos block</h4>
 {% endif %}
 
 <section class="m-entity m-entity__linked-logos">
-  {% include '_partials/atoms/block-title.twig' %}
+  {% include '_partials/block-title.twig' %}
 
   <div class="a-grid a-grid--4">
     {% for logo in fields.logos %}

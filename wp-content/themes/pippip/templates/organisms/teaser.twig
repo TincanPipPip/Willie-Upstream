@@ -1,0 +1,83 @@
+<article class="o-teaser {% if wide %}o-teaser--wide{% endif %}">
+  <a href="{{ teaser.link }}" class="o-teaser__thumb" tabindex="-1" aria-label="Link to {{ teaser.title }}">
+    <img 
+      {% if is_preview %}
+        src="{{ teaser.thumbnail.src|resize('769','401') }}"
+      {% else %}
+        data-src="{{ teaser.thumbnail.src|resize('769','401') }}"
+        class="lazy"
+      {% endif %}
+      alt="{{ teaser.thumbnail.alt }}"
+    />
+  </a>
+
+  <div class="o-teaser__content">
+    {% if largeTitle %}
+      <h2 class="h3"><a href="{{ teaser.link }}">{{ teaser.title }}</a></h2>
+    {% else %}
+      <h3 class="h4"><a href="{{ teaser.link }}">{{ teaser.title }}</a></h3>
+    {% endif %}
+
+    {% if teaser.type == 'post' %}
+      <p class="a-published">{{ teaser.post_date|date('l, F jS, Y') }}</p>
+    {% endif %}
+
+    {% if isBookable %}
+      <p class="a-published">
+        <strong>
+          {{ teaser.get_field('date') }}
+          {{ teaser.get_field('event_time') }}
+        </strong>
+      </p>
+    {% endif %}    
+
+    {% if teaser.post_excerpt %}
+      {% if wide %}
+        <p>{{ teaser.post_excerpt[:300] }}...</p>
+        <p><a href="{{ teaser.link }}" tabindex="-1" aria-label="Read more about {{ teaser.title }}">More info</a></p>
+      {% else %}
+        <p>{{ teaser.post_excerpt[:125] }}...</p>
+      {% endif %}
+    {% endif %}
+  </div>
+
+  {% if not wide %}
+    <div class="o-teaser__buttons">
+      {% for category in teaser.terms('category') %}        
+        <a href="/stories/?categories={{ category.id }}" class="a-btn--sm">{{ category.name }}</a>
+      {% endfor %}
+
+      {% for resourceCat in teaser.terms('resourcetags') %}        
+        <a href="/resources/?resourcetags={{ resourceCat.id }}" class="a-btn--sm">{{ resourceCat.name }}</a>
+      {% endfor %}
+
+      {% for memberCat in teaser.terms('membertype') %}        
+        <a href="/our-members/?membertype={{ memberCat.id }}" class="a-btn--sm">{{ memberCat.name }}</a>
+      {% endfor %}
+
+      {% set eventDate = teaser.get_field('date')|date("U") %}
+      {% set now = "now"|date("U") %}
+
+      {% if eventDate > now and teaser.get_field('tickets_link') %}
+        {% include "/atoms/button.twig" with {
+          button: teaser.get_field('tickets_link'),
+          hasIcon: true,
+          classes: [
+            'a-btn',
+            'a-btn--icon'
+          ]
+        } %}
+      {% endif %}
+
+      {% if isBookable %}
+        {% include "/atoms/button.twig" with {
+          button: {
+            url: teaser.link,
+            title: 'More info'
+          },
+        } %}
+      {% endif %}
+      
+    </div>
+  {% endif %}
+</article>

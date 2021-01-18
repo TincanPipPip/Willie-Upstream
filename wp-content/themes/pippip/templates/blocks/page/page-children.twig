@@ -1,0 +1,23 @@
+{% if is_preview %}
+  <h4 class="preview-title">Page children</h4>
+{% endif %}
+
+{% if page.children %}
+  <section class="m-entity">
+    <div class="grid">
+      <div class="col-sm-12">
+        
+        <div class="a-grid a-grid--1 a-grid--spacious">
+          {% for child in page.children %}
+            {% include "/organisms/teaser.twig" with {
+              teaser: child,
+              wide: true,
+              largeTitle: true
+            } %}
+          {% endfor %}
+        </div>
+        
+      </div>
+    </div>
+  </section>
+{% endif %}

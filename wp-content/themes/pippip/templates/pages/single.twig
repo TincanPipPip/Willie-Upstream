@@ -1,18 +1,52 @@
 {% extends "/layout/base.twig" %}
 
 {% block content %}
+	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}" data-template="single.twig">
 
-  <article class="t-post">
+    {% include "/molecules/banner-alt.twig" %}
+
+    <section class="o-page {% if not post.thumbnail.src %}o-page--noimg{% endif %}">
+      
+      {% for block in blocks %}
+        {{ block }}
+      {% endfor %}
+
+      <div class="m-post-info">
+        <strong>Posted: {{ post.post_date|date('l, F jS, Y') }}</strong>
+        
+        <div class="m-post-info__categories">
+          <strong>Tagged with:</strong>
+
+          {% for category in post.terms('category') %}
+            <a href="/stories?categories={{ category.id }}" class="a-btn--sm">{{ category.name }}</a>
+          {% endfor %}
+        </div>
+      </div>
     
-    <h1>{{ post.title }}</h1>
+      <aside class="o-page__col o-page__right">
+        <h3>Latest stories</h3>
 
-    <time datetime="{{ post.date|date('Y-m-d H:i:s') }}">
-      {{ post.date|date('M jS Y') }}
-    </time>
+        <div class="m-latest-posts">
+          {% for latestpost in latestPosts %}
+            <a href="{{ latestpost.link }}">
+              {{ latestpost.title }}
+            </a>
+          {% endfor %}
+        </div>
 
-    <section class="t-post__content">
-      {{ post.content }}
+        {% include "/atoms/button.twig" with {
+          button: {
+            url: '/stories',
+            title: 'See all stories'
+          },
+          classes: [
+            'a-btn'
+          ]
+        } %}
+      </aside>
     </section>
 
-  </article>
+    {% include "/molecules/related.twig" %}
+    
+	</article>
 {% endblock %}

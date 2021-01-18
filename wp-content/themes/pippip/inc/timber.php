@@ -1,10 +1,14 @@
 <?php
 
 /**
- * Timber setup
+ * ----------------------
+ * Un.titled
+ * Timber setup & config
+ * ----------------------
  */
 
 $composer_autoload = dirname( __DIR__ ) . '/vendor/autoload.php';
+
 if ( file_exists( $composer_autoload ) ) {
 	require_once $composer_autoload;
 	$timber = new Timber\Timber();
@@ -31,7 +35,7 @@ Timber::$autoescape = false;
  * You can move this to its own file and include here via php's include("MySite.php")
  */
 
-class P1Timber extends Timber\Site {
+class PippipTimber extends Timber\Site {
 	/** Add timber support. */
 	public function __construct() {
 		add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
@@ -41,15 +45,64 @@ class P1Timber extends Timber\Site {
 		parent::__construct();
 	}
 
-	/** This is where you add some context
-	 *
+	/** 
+	 * Setup context
 	 * @param string $context context['this'] Being the Twig's {{ this }}.
 	 */
 	public function add_to_context( $context ) {
-		$context['mainnav']  = new Timber\Menu(2);
-		$context['footernav']  = new Timber\Menu(3);
+    $context['mainnav']  = new Timber\Menu(21);
+    $context['footerprimarynav']  = new Timber\Menu(22);
+		$context['footersecondarynav']  = new Timber\Menu(23);
 		$context['site']  = $this;
     $context['options'] = get_fields('option');
+
+    /**
+     * Events context
+     */
+    $today = date('Ymd');
+  
+    // Current events
+    $currentEventsArgs = array(
+      'post_type' => 'events',
+      'posts_per_page' => -1,
+      'meta_key' => 'date',
+      'orderby' => 'meta_value',
+      'meta_query' => array(
+        array(
+          'key' => 'date',
+          'value' => $today,
+          'compare' => '>',
+        ),
+      ),
+      'order' => 'DESC',  
+    );    
+    $context['currentEvents'] = Timber::get_posts( $currentEventsArgs );
+  
+    // Past events
+    global $paged;
+    if (!isset($paged) || !$paged){
+      $paged = 1;
+    }
+
+    $pastEventArgs = array(
+      'post_type' => 'events',
+      'posts_per_page' => 12,
+      'meta_key' => 'date',
+      'orderby' => 'meta_value',
+      'meta_query' => array(
+        array(
+          'key' => 'date',
+          'value' => $today,
+          'compare' => '<',
+        ),
+      ),
+      'order' => 'DESC',
+      'paged' => $paged,  
+    );
+    $pastEvents = new Timber\PostQuery($pastEventArgs);
+    $context['pastEvents'] = $pastEvents;
+    $context['pastEventsPagination'] = $pastEvents->pagination();
+
 		return $context;
 	}
 
@@ -87,7 +140,6 @@ class P1Timber extends Timber\Site {
 		add_theme_support( 'menus' );
   }
   
-  
 }
 
-new P1Timber();
+new PippipTimber();

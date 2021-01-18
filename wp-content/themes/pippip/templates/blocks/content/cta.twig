@@ -1,13 +1,12 @@
-{#
-/**
- * Block Name: CTA
- */
-#}
-
 {% if is_preview %}
   <h4 class="preview-title">CTA block</h4>
 {% endif %}
 
 <section class="m-entity m-entity__cta">
-  <a href="{{ fields.button.url }}" class="a-btn">{{ fields.button.title }}</a>
+  {% include "/atoms/button.twig" with {
+    button: fields.button,
+    classes: [
+      'a-btn'
+    ]
+  } %}
 </section>

@@ -1,0 +1,32 @@
+{% if is_preview %}
+  <h4 class="preview-title">Resources</h4>
+{% endif %}
+
+<section class="m-entity m-entity__resources">
+  {% include '_partials/block-title.twig' %}
+
+  <div class="m-resources a-grid a-grid--1">
+    {% for resource in fields.resources_ref %}
+      <div class="o-teaser o-teaser--resources">
+
+        <div class="o-teaser__content">
+          <h3 class="h4"><a href="{{ TimberPost(resource).link }}" aria-label="View {{ resource.title }}">{{ resource.post_title }}</a></h3>
+
+          {% if resource.post_excerpt %}
+            <p>{{ resource.post_excerpt }}</p>
+          {% endif %}
+        </div>
+
+        {% if TimberPost(resource).terms|length > 0 %}
+          <div class="o-teaser__buttons">
+            {% for tag in TimberPost(resource).terms %}
+              <a class="a-btn--sm" href="/resources?resourcetags={{ tag.id }}">{{ tag.name }}</a>
+            {% endfor %}
+          </div>
+        {% endif %}
+        
+      </div>
+    {% endfor %}
+  </div>
+  
+</section>
