@@ -7,7 +7,9 @@
       
     <h1>{{ post.title }}</h1>
 
-    {{ post.content }}
+    {% for block in blocks %}
+      {{ block }}
+    {% endfor %}
   
     <aside class="o-page__col o-page__right">
       {{ subnav }}

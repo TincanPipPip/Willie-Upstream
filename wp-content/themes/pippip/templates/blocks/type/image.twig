@@ -1,7 +1,7 @@
 <section class="{{ className }} {{ className }}__{{ blockName }}">
-
+  {% include '_partials/block-title.twig' %}
+  
   {% set image = fields.image %}
-
   <figure>
     <picture>
       <source media="(max-width: 400px)" data-srcset="{{ Image(image).src|resize(400) }} 1x, {{ Image(image).src|resize(800) }} 2x" type="image/jpeg">
@@ -19,7 +19,7 @@
     </picture>
 
     {% if image.caption %}
-      {% include "_partials/image-credit.twig" with {credit: image.caption} %}
+      {% include "atoms/image-credit.twig" with {credit: image.caption} %}
     {% endif %}
   </figure>
   

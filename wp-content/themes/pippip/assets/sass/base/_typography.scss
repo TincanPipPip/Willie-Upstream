@@ -68,27 +68,6 @@ h6,
   text-align-last: center;
 }
 
-.border {
-  &-bottom {
-    border-bottom: 1px solid var(--c-primary);
-    padding-bottom: 1rem;
-    margin-bottom: 2rem;
-
-    @include media('<sm') {
-      margin-bottom: 1rem;
-    }
-  }
-  &-top {
-    border-top: 1px solid var(--c-primary);
-    padding-top: 1rem;
-    margin-top: 2rem;
-
-    @include media('<sm') {
-      margin-top: 1rem;
-    }
-  }
-}
-
 /**
   * Paragraphs
   */
