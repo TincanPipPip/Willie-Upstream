@@ -29,7 +29,7 @@
 
         {% include 'atoms/pagination.twig' with { toPaginate: posts.pagination, pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
       {% else %}
-        <p>No results</p>
+        <p>{{ options.listing_block_no_results }}</p>
       {% endif %}
     </section>
 
