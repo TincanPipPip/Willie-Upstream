@@ -1,10 +1,9 @@
 {
-    "/js/admin.accordion.js": "/js/admin.accordion.js?id=11e93066cef3af4ed879",
-    "/css/admin.css": "/css/admin.css?id=57eab5583f81da9ce4a2",
-    "/css/global.css": "/css/global.css?id=b3547604823dce4b1b97",
-    "/css/print.css": "/css/print.css?id=dd04120b41b74bbd68ab",
-    "/js/admin.gallery.js": "/js/admin.gallery.js?id=1959fe1a502c1851dec9",
-    "/js/defaults.js": "/js/defaults.js?id=f94e36e16d8e4cec14bf",
-    "/js/emmsg.js": "/js/emmsg.js?id=b549ea6fafbc08b7c2f0",
-    "/js/global.js": "/js/global.js?id=b195df233f28673b64aa"
+    "/js/admin.accordion.js": "/js/admin.accordion.js?id=b93b1a62207c5023b8bd",
+    "/js/defaults.js": "/js/defaults.js?id=574e82d5b6f49c3fa598",
+    "/js/emmsg.js": "/js/emmsg.js?id=1f171f66cce16c2d70b2",
+    "/js/global.js": "/js/global.js?id=d41d8cd98f00b204e980",
+    "/css/print.css": "/css/print.css?id=50cdac295d0af6bdcc52",
+    "/css/global.css": "/css/global.css?id=8e5c0db816015862fe6b",
+    "/css/admin.css": "/css/admin.css?id=b27ddf59cbf9a4e5eb22"
 }

@@ -1,1 +1,15 @@
-<a href="{{ url }}" rel="nofollow noopener" aria-label="{{ title }}" target="{{ target }}" class="a-social-link">{% include 'img/' ~ title|lower ~ '.svg' ignore missing %}</a>
+{#
+  Social link
+  - link: {link}
+#}
+
+<a 
+  href="{{ link.url }}" 
+  rel="nofollow noopener" 
+  aria-label="{{ link.title }}" 
+  target="{{ link.target }}" 
+  class="a-social-link"
+>
+  {% include 'img/' ~ link.title|lower ~ '.svg' ignore missing %}
+  <span>{{ link.url|replace({'https://':''}) }}</span>
+</a>

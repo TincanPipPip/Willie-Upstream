@@ -15,12 +15,13 @@ require('inc/users.php');
  */
 
 require('inc/acf.php');
-// require('inc/gutenberg.php');
+require('inc/gutenberg.php');
 require('inc/images.php');
 require('inc/excerpt.php');
 require('inc/cpts.php');
 require('inc/taxonomy.php');
 require('inc/widgets.php');
+require('inc/custom-post-types.php');
 
 /**
  * CSS & JS

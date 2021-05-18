@@ -22,6 +22,12 @@ if (file_exists(dirname(__FILE__) . '/wp-config-pantheon.php') && isset($_ENV['P
  * which you should also make sure you .gitignore.
  */
 } elseif (file_exists(dirname(__FILE__) . '/wp-config-local.php') && !isset($_ENV['PANTHEON_ENVIRONMENT'])){
+  // Include for ddev-managed settings in wp-config-ddev.php.
+  $ddev_settings = dirname(__FILE__) . '/wp-config-ddev.php';
+  if (is_readable($ddev_settings) && !defined('DB_USER')) {
+    require_once($ddev_settings);
+  }
+
 	# IMPORTANT: ensure your local config does not include wp-settings.php
 	require_once(dirname(__FILE__) . '/wp-config-local.php');
 

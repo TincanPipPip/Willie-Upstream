@@ -10,5 +10,5 @@
 add_action( 'init', 'pippip_enable_excerpt' );
 
 function pippip_enable_excerpt() {
-    add_post_type_support( 'page', 'excerpt' );
+  add_post_type_support( 'page', 'excerpt' );
 }

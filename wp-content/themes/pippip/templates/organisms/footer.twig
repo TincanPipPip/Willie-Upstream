@@ -1,34 +1,5 @@
 <footer class="o-footer">
-  <div class="grid">
-    <div class="col-sm-12">
 
-      <div class="o-footer__top">
+  <small><a href="https://un.titled.co.uk" target="_blank" rel="nofollow noopener">An Un.titled site</a></small>
 
-        <nav class="o-footer__block o-footer__nav o-footer__nav-primary" aria-label="Footer primary navigation">
-          {% for item in footerprimarynav.items %}
-            <a href="{{ item.link }}">{{ item.title }}</a>
-          {% endfor %}
-        </nav>
-
-        {% if options.social_links %}
-          <div class="o-footer__social">
-            {% for links in options.social_links %}
-              {% include "/atoms/social-link.twig" with {
-                url: links.link.url,
-                title: links.link.title,
-                target: links.link.target
-              } %}
-            {% endfor %}
-          </div>
-        {% endif %}
-
-        {% if options.legal_copy %}
-          <small>{{ options.legal_copy }}</small>
-        {% endif %}
-        
-        <small><a href="https://un.titled.co.uk" target="_blank" rel="nofollow noopener">An Un.titled site</a></small>
-      </div>
-
-    </div>
-  </div>
 </footer>

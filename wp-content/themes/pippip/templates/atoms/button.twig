@@ -1,6 +1,9 @@
-<a href="{{ button.url }}" class="{{ classes|join(' ') }}" target={{ button.target }}>
+{#
+  Visual button
+  - button: {link}
+  - classes: [string]
+#}
+
+<a href="{{ button.url }}" class="{{ classes|join(' ') }}" target="{{ button.target }}" aria-label="{{ ariaLabel }}">
   {{ button.title }}
-  {% if hasIcon %}
-     {% include 'img/cta-icon.svg' ignore missing %}
-  {% endif %}  
 </a>

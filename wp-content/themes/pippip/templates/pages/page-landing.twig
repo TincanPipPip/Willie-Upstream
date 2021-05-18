@@ -5,15 +5,9 @@
 
     {% include "/molecules/banner.twig" %}
 
-    <section class="o-page o-page--landing {% if not post.thumbnail.src %}o-page--noimg{% endif %}">
-      <h1 class="h2">{{ post.title }}</h1>
+    <h1>{{ post.title }}</h1>
     
-      <aside class="o-page__col o-page__right"></aside>
-    </section>
-    
-    <section class="o-landing">
-      {{ post.content }}
-    </section>
+    {{ post.content }}
 
 	</article>
 {% endblock %}
