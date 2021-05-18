@@ -23,39 +23,41 @@
  */
 
 &__quote {
-  blockquote {
-    font-family: var(--fontTitle);
-    margin: 0;
-    padding: 0 0 calc(var(--bump) / 2);
+  --starSize: 17px;
 
-    p {
-      margin-bottom: 0;
+  .short-quote {
+    --starSize: 24px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    blockquote {
+      text-align: center;
+      text-align-last: center;
     }
   }
 
-  &-info {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
+  blockquote {
+    margin: 0 0 1rem;
   }
 
   cite {
-    font-family: var(--fontBody);
     font-style: normal;
-
-    .name {
-      font-weight: bold;
-    }
   }
 
   .rating {
     display: inline-flex;
-    margin-right: calc(var(--bump) / 2);
+    margin-right: 0.5rem;
+    margin-bottom: 1rem;
+
+    .short-quote & {
+      margin-bottom: 2rem;
+    }
 
     &__star {
-      width: 24px;
-      height: 24px;
+      width: var(--starSize);
+      height: var(--starSize);
       margin-right: 5px;
       stroke: var(--c-primary);
 

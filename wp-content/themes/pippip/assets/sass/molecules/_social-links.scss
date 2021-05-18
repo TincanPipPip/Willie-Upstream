@@ -9,46 +9,44 @@
  * Styling
  */
 .m-social-links {
-  display: flex;
-  align-items: center;
-  margin-top: calc(var(--bump) / 3);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
 
-  @include media('<md') {
-    justify-content: center;
+  @include media('<xxs') {
+    grid-template-columns: repeat(4, 1fr);
   }
 
-  &__link {
-    margin-right: calc(var(--bump) / 2);
-    height: calc(var(--bump) * 1.25);
-    width: calc(var(--bump) * 1.25);
-    border-radius: 50%;
-    display: block;
+  .m-nav__social & {
+    grid-template-columns: repeat(6, 1fr);
+  }
 
-    &:last-child {
-      margin-right: 0;
+  a {
+    @include linkReset;
+    display: block;
+    padding: 0.5rem;
+    height: 35px;
+    width: 35px;
+
+    span {
+      display: none;
+      visibility: hidden;
     }
 
     svg {
+      object-fit: contain;
       width: 100%;
       height: 100%;
-      object-fit: cover;
-    }
-
-    rect {
-      transition: 0.1s var(--easing);
-      fill: var(--c-primary);
     }
 
     path {
+      transition: 0.2s var(--transition);
       fill: var(--c-white);
     }
 
     &:hover {
-      rect {
-        fill: var(--c-white);
-      }
       path {
-        fill: var(--c-primary);
+        fill: var(--c-pink);
       }
     }
   }

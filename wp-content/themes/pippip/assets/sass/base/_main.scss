@@ -11,10 +11,11 @@
 html,
 body {
   @include font-smoothing(true);
-  font-size: var(--fontSize);
   box-sizing: border-box;
+  font-size: var(--fontSize);
   line-height: var(--lineHeight);
   font-family: var(--fontBody);
+  color: var(--c-primary);
 }
 
 *,

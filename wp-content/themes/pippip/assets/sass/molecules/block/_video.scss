@@ -1,10 +1,12 @@
 /**
  * ----------------------
  * Un.titled
- * Molecules - Image
+ * Molecules - Video
  * ----------------------
  */
 
-&__image-wrapper {
-  position: relative;
+&__video {
+  iframe {
+    width: 100%;
+  }
 }

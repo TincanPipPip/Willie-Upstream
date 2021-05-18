@@ -13,9 +13,11 @@
 * Styling
 */
 &__downloads {
-  .file {
-    padding-left: 0;
-    background-image: none;
-    font-family: var(--fontTitle);
+  a {
+    margin-bottom: 1rem;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
 }

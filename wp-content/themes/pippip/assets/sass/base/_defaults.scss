@@ -20,7 +20,8 @@ ul.plain {
 
 img {
   -webkit-backface-visibility: hidden;
-  transition: var(--transition);
+  backface-visibility: hidden;
+  transition: opacity var(--transition);
 
   &.lazy {
     opacity: 0;
@@ -35,10 +36,6 @@ img {
   &.loaded {
     opacity: 1;
   }
-}
-
-.svg {
-  transition: all var(--transition);
 }
 
 .hidden {
