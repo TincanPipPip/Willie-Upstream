@@ -5,4 +5,4 @@
 - It includes a comprehensive set of modules & base theme
 
 ## Installation
-See [Wiki](https://github.com/TincanPipPip/Willie/wiki/Installation)
+See [Wiki](https://github.com/TincanPipPip/Willie-Upstream/wiki/Installation)
